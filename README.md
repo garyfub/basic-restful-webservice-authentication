@@ -30,3 +30,19 @@ After building project, get .war file and run on your current web server:
 ```bash
 	./startup.sh
 ```
+
+## Oauth Token Request
+
+Call this curl to get your access token:
+
+```bash
+	curl -X POST clientIdPassword:secret@localhost:8080//basic-oauth/oauth/token -d grant_type=password -d username=john -d password=123 -d client_id=clientIdPassword
+```
+
+## Oauth Method Request
+
+Call the curl with token like this to make use of the methods:
+
+```bash
+	curl -H "Authorization: Bearer $TOKEN" localhost:8080/basic-oauth/
+```
