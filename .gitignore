@@ -3,6 +3,7 @@
 /bin
 /target
 /.project
+/.settings
 *.jar
 *.project
 *.prefs
