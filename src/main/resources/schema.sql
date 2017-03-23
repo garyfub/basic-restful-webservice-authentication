@@ -9,10 +9,12 @@ CREATE TABLE users (
   UNIQUE INDEX (email)
 );
 
+-- Password: admin
 insert into users 
 (username, email, password, activated) 
 values 
 ('admin', 'admin@email.me', 'b8f57d6d6ec0a60dfe2e20182d4615b12e321cad9e2979e0b9f81e0d6eda78ad9b6dcfe53e4e22d1', 1);
+-- Password: user
 insert into users 
 (username, email, password, activated) 
 values 

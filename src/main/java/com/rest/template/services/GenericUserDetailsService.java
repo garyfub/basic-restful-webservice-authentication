@@ -10,8 +10,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.rest.template.dto.entity.User;
-import com.rest.template.dto.repository.UserRepository;
+import com.rest.template.domain.entity.User;
+import com.rest.template.domain.repository.UserRepository;
 
 @Service
 public class GenericUserDetailsService implements UserDetailsService {

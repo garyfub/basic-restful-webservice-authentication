@@ -1,4 +1,4 @@
-package com.rest.template.dto.entity;
+package com.rest.template.domain.entity;
 
 import java.io.Serializable;
 
