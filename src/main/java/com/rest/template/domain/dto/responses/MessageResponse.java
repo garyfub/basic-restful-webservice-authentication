@@ -1,4 +1,4 @@
-package com.rest.template.controllers.responses;
+package com.rest.template.domain.dto.responses;
 
 import org.springframework.hateoas.ResourceSupport;
 

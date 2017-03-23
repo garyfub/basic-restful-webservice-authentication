@@ -1,4 +1,4 @@
-package com.rest.template.controllers.requests;
+package com.rest.template.domain.dto.requests;
 
 import javax.validation.constraints.Size;
 

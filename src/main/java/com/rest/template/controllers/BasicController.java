@@ -2,8 +2,8 @@ package com.rest.template.controllers;
 
 import javax.validation.Valid;
 
-import com.rest.template.controllers.requests.BasicRequest;
-import com.rest.template.controllers.responses.MessageResponse;
+import com.rest.template.domain.dto.requests.BasicRequest;
+import com.rest.template.domain.dto.responses.MessageResponse;
 import com.rest.template.exceptions.SizeException;
 import com.rest.template.exceptions.ValidationException;
 
@@ -28,14 +28,14 @@ public class BasicController {
 	
 	private static final Logger logger = Logger.getLogger(BasicController.class);
 	
-	@PreAuthorize("#oauth2.hasScope('read')")
+	@PreAuthorize("#oauth2.clientHasRole('ROLE_ADMIN')")
 	@RequestMapping("/")
     public String index() {
 		logger.info("Rest Template Initialized.");
         return "Rest Template!";
     }
 	
-	@PreAuthorize("#oauth2.hasScope('read')")
+	@PreAuthorize("#oauth2.clientHasRole('ROLE_USER')")
 	@RequestMapping(value="/echo/{message}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
     public HttpEntity<MessageResponse> echo(@PathVariable(value="message") String input) throws SizeException {
@@ -51,7 +51,7 @@ public class BasicController {
 		return new ResponseEntity<MessageResponse>(msg, HttpStatus.OK);
     }
 	
-	@PreAuthorize("#oauth2.hasScope('read')")
+	@PreAuthorize("#oauth2.clientHasRole('ROLE_USER')")
 	@RequestMapping(value="/new", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
     public HttpEntity<MessageResponse> insert(@RequestBody @Valid final BasicRequest content, final BindingResult result) throws ValidationException {
